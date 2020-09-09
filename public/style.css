@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Poppins:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 1em 5em;
+}
+
+nav ul {
+    display: flex;
+  
+}
+nav li {
+    list-style: none;
+    padding-left: 5em;
+}
+nav a {
+    letter-spacing: 0.12em;
+    color: black;
+    text-decoration: none;
+}
+.hero {
+    border-top: 1px solid black;
+}
+.active {
+    text-decoration: underline;
+}
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 5em;
+}
+.hero img {
+    margin: 5em 0
+}
+.hero h1{
+    font-size: 2em;
+    width: 60%
+}
+.hero div {
+    border-bottom: 1px solid black;
+    width: 50%;
+    padding-top: 5em
+}
+#blogs {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2em;
+    text-align: center;
+
+}
+#all {
+    text-align: center;
+    margin-bottom: 2em;
+}
+#blogs img {
+    height: 300px;
+    object-fit: cover;
+}
+#blogs img:hover {
+    opacity: 0.5;
+}
+#blogs figcaption {
+    font-family: 'Fira Code', monospace;
+}
+#blogs div {
+    width: 100%;
+    margin: 1em auto
+}
+#blogs figcaption {
+    padding: 1em 6em
+}
+
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+}
+footer a {
+    color: white;
+    font-family: 'Fira Code', monospace;
+}
+footer p:first-of-type {
+word-spacing: 2em;
+padding-bottom: 2em;
+font-family: 'Fira Code', monospace;
+}
+footer p:nth-of-type(2) {
+    padding: 2em 10em;
+}
+footer ul {
+    display: flex;
+    justify-content: center;
+}
+footer li {
+    list-style: none;
+    padding-left: 1em;
+    padding-bottom: 2em;
+}
+footer p:nth-of-type(3) {
+    padding: 2em 50em;
+    font-size: 0.7em;
+    font-family: 'Fira Code', monospace;
+}

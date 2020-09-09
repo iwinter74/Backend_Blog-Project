@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+   <img src="/NORDIC ROSE.png" alt="">
+    <nav>
+        <ul id="nav_container">
+            <li class="active" id="blog"><a onclick="myActive()" href="/">BLOG</a></li>
+            <li class="" id="new"><a onclick="myActive()"  href="/new_article">NEW ARTICLE</a></li>
+        </ul>
+    </nav>
+    </header>
+<section class="hero">
+    <h1><%=singleBlog.title%></h1>
+    <img src="<%=singleBlog.url%>" alt="">
+    <div></div>
+    <article>
+        <img src="<%=singleBlog.author_bild%>" alt="">
+        <p><%=singleBlog.author%></p>
+        <p><%=singleBlog.published_at%></p>
+        <p>.</p>
+        <p><%=time%> min read</p>
+
+        <p> <%=singleBlog.body%></p>
+    </article>
+</section>
+    <%- include('./partials/footer')%>
+<script src="/main.js"></script>
+</body>
+</html>
