@@ -46,42 +46,47 @@ nav a {
 }
 .hero h1{
     font-size: 2em;
-    width: 60%
+    width: 60%;
+    padding: 0 5em
 }
 .hero div {
     border-bottom: 1px solid black;
     width: 50%;
     padding-top: 5em
 }
-#blogs {
+.new h1 {
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-size: 3em;
+}
+.blogs {
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap: 2em;
     text-align: center;
+    margin-bottom: 4em;
 
 }
 #all {
     text-align: center;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+    font-size: 3em;
 }
-#blogs img {
+.blogs img {
     height: 300px;
     object-fit: cover;
 }
-#blogs img:hover {
+.blogs img:hover {
     opacity: 0.5;
 }
-#blogs figcaption {
+.blogs figcaption {
     font-family: 'Fira Code', monospace;
+    padding: 1em 15em
 }
-#blogs div {
+.blogs div {
     width: 100%;
     margin: 1em auto
 }
-#blogs figcaption {
-    padding: 1em 6em
-}
-
 footer {
     background: black;
     color: white;
@@ -94,6 +99,7 @@ footer a {
 footer p:first-of-type {
 word-spacing: 2em;
 padding-bottom: 2em;
+padding-top: 1em;
 font-family: 'Fira Code', monospace;
 }
 footer p:nth-of-type(2) {
@@ -112,4 +118,74 @@ footer p:nth-of-type(3) {
     padding: 2em 50em;
     font-size: 0.7em;
     font-family: 'Fira Code', monospace;
+}
+.eyes {
+    width: 100%
+}
+#add article {
+    text-align: center;
+}
+#add h1 {
+    padding-top: 2em;
+    font-size: 2em;
+    font-weight: 400;
+}
+#add div {
+    width: 50px;
+    border-top: 4px solid black;
+    display: inline-block;
+}
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    padding: 5em
+}
+form input, textarea {
+    background: #E5E5E5;
+    border-radius: 5px;
+    border: #E5E5E5;
+    padding: 2em
+}
+form input[type=submit] {
+    background: black;
+    color: white;
+}
+.single h1+img {
+width: 100%;
+}
+.single h1 {
+    text-align: center;
+    padding: 2em 10em 4em 10em;
+    font-size: 3em;
+}
+.single article {
+    width: 40%;
+    border-top: 3px solid black;
+    margin-top: 2em
+}
+#article_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#div_container {
+    display: flex;
+    margin: 1em 0;
+}
+#div_container div {
+margin-left: 1em
+}
+#div_container img {
+    border-radius: 50%;
+}
+#div_container span {
+    font-family: 'Fira Code', monospace;
+}
+#div_container p {
+    font-weight: bold;
+    font-family: 'Fira Code', monospace;
+}
+.content {
+    line-height: 170%;
 }

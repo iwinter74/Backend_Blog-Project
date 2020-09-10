@@ -8,29 +8,34 @@
 </head>
 <body>
     <header>
-   <img src="/NORDIC ROSE.png" alt="">
+        <a href="/"><img src="/NORDIC ROSE.png" alt=""></a>
     <nav>
         <ul id="nav_container">
-            <li class="active" id="blog"><a onclick="myActive()" href="/">BLOG</a></li>
-            <li class="" id="new"><a onclick="myActive()"  href="/new_article">NEW ARTICLE</a></li>
+            <li><a class="active" href="/blog/<%=singleBlog.id%>">BLOG</a></li>
+            <li><a href="/newArticle">New Article</a></li>
         </ul>
     </nav>
     </header>
-<section class="hero">
+<section class="single">
     <h1><%=singleBlog.title%></h1>
     <img src="<%=singleBlog.url%>" alt="">
-    <div></div>
+    <div id="article_container">
     <article>
+        <div id="div_container">
         <img src="<%=singleBlog.author_bild%>" alt="">
+        <div>
         <p><%=singleBlog.author%></p>
-        <p><%=singleBlog.published_at%></p>
-        <p>.</p>
-        <p><%=time%> min read</p>
+        <span><%=singleBlog.published_at%></span>
+        <span>.</span>
+        <span><%=singleBlog.duration%> min read</span>
+        </div>
+        </div>
 
-        <p> <%=singleBlog.body%></p>
+        <p class="content"> <%=singleBlog.body%></p>
     </article>
+    </div>
 </section>
-    <%- include('./partials/footer')%>
-<script src="/main.js"></script>
+<%- include('./partials/whatNext')%>
+<%- include('./partials/footer')%>
 </body>
 </html>

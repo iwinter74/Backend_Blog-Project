@@ -8,11 +8,13 @@
 </head>
 <body>
     <header>
-   <img src="/NORDIC ROSE.png" alt="">
+        <a href="/"><img src="/NORDIC ROSE.png" alt=""></a>
     <nav>
         <ul id="nav_container">
-            <li class="active" id="all"><a onclick="myActive()" href="/">ALL</a></li>
-            <li class="" id="new"><a onclick="myActive()"  href="/newArticle">NEW ARTICLE</a></li>
+            <li><a class="<%= activNav == '/' ? 'active' : '' %>" href="/">All</a></li>
+            <li><a class="<%= activNav == '/newArticle' ? 'active' : '' %>" href="/newArticle">New Article</a></li>
         </ul>
     </nav>
     </header>
+
+

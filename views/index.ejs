@@ -1,9 +1,13 @@
 <%- include('./partials/head')%>
 
-<%- include('./partials/hero')%>
-
+<section class="hero">
+    <a href="/blog/<%=blogList[0].id%>"><img src="<%=blogList[0].url%>" alt=""></a>
+<h1><%=blogList[0].title%>></h1>
+<div></div>
+</section>
+<section>
 <h1 id="all">All articles</h1>
-<article id="blogs">
+<article class="blogs">
 <%newBlogList.forEach(elt => {%>
     <div>
         <a href="/blog/<%=elt.id%>"><img src="<%=elt.url%>" alt=""></a>
@@ -13,8 +17,8 @@
 
 
 </article>
+</section>
 
 <%- include('./partials/footer')%>
-<script src="/main.js"></script>
 </body>
 </html>

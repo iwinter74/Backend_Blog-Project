@@ -1,0 +1,14 @@
+<section class="new">
+    <img class="eyes" src="eyes.svg" alt="">
+    <h1>What to read next</h1>
+    <article class="blogs">
+        <%randomArr.forEach(elt => {%>
+            <div>
+                <a href="/blog/<%=blogList[elt].id%>"><img src="<%=blogList[elt].url%>" alt=""></a>
+        <figcaption><%=blogList[elt].title%></figcaption>
+        </div>
+        <%})%>
+    
+    </article>
+    
+    </section>
