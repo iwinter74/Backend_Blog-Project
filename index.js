@@ -175,7 +175,7 @@ app.set('view engine', 'ejs')
 
 app.use(express.static('public'))
 
-app.listen(port, (req, res) => {
+app.listen(PORT, (req, res) => {
   console.log(`Server started`)
 })
 
