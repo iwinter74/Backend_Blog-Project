@@ -163,6 +163,8 @@ console.log(randomArr)
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
+const PORT = process.env.PORT || 3005
+
 
 let newBlogList = blogList.slice(1)
 
@@ -173,7 +175,7 @@ app.set('view engine', 'ejs')
 
 app.use(express.static('public'))
 
-app.listen(3005, (req, res) => {
+app.listen(port, (req, res) => {
   console.log(`Server started`)
 })
 
