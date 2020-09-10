@@ -206,7 +206,7 @@ app.post('/new', (req, res) => {
   req.body.id = blogList.length
   req.body.published_at = new Date()
   req.body.duration = (req.body.body.split(" ").length /60).toFixed(0)
-  // newBlogList.push(req.body)
+  newBlogList.push(req.body)
   blogList.push(req.body)
   console.log(req.body)
   console.log()
