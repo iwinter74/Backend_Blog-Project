@@ -1,7 +1,10 @@
-var express = require('express')
-var app = express()
+const express = require('express')
+const app = express()
+const formidable = require('formidable')
+const path = require('path')
+const { body, validationResult } = require('express-validator');
 
-
+let pathPictures =[]
 
 let blogList = [
   {
@@ -168,23 +171,18 @@ const PORT = process.env.PORT || 3005
 
 let newBlogList = blogList.slice(1)
 
-// console.log(newBlogList)
-let ejs = require('ejs');
 
 app.set('view engine', 'ejs')
 
 app.use(express.static('public'))
-
-app.listen(PORT, (req, res) => {
-  console.log(`Server started`)
-})
+app.use(express.static('uploads'))
 
 app.get('/', function (req, res) {
   res.status(200).render('index', { blogList: blogList, newBlogList: newBlogList, title: "all_blogs", activNav: "/" })
 })
 
 app.get('/newArticle', function (req, res) {
-  res.status(200).render('newArticle', { title: "new_article", activNav: "/newArticle", randomArr: randomArr, blogList: blogList})
+  res.status(200).render('newArticle', { title: "new_article", activNav: "/newArticle", randomArr: randomArr, blogList: blogList, pathPictures: pathPictures})
 })
 app.get('/blog/:item', (req, res) => {
   console.log(req.params.item)
@@ -201,15 +199,54 @@ app.get('/blog/:item', (req, res) => {
   //   singleBlog: newBlogList[req.params.item - 1]
   // })
 })
-app.post('/new', (req, res) => {
+
+
+app.post('/new', [
+  body("body").isLength({min: 10}).withMessage('Message must be at least 10 characters long')
+],
+  (req, res) => {
+    const errors = validationResult(req);
+    console.log(errors);
+    console.log(req.body);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
   console.log(req.body)
   req.body.id = blogList.length
   req.body.published_at = new Date()
+  console.log(req.body.published_at.toString())
+  req.body.published_at = req.body.published_at.toString().slice(4,15)
   req.body.duration = (req.body.body.split(" ").length /60).toFixed(0)
   newBlogList.push(req.body)
   blogList.push(req.body)
   console.log(req.body)
-  console.log()
   res.status(201).redirect('/')
 })
 
+app.post('/blogs/upload', (req, res, next) => {
+  const form = formidable({
+    multiples: true,
+    uploadDir: "./uploads",
+    keepExtensions: true,
+  });
+ 
+  form.parse(req, (err, fields, files) => {
+    if (err) {
+      next(err);
+      return;
+    }
+    // console.log(path.basename(files.someExpressFiles.path));
+    // pathPictures.push(path.basename(files.someExpressFiles.path));
+    // console.log(pathPictures);
+    files.someExpressFiles.forEach(elt => {
+      pathPictures.push(path.basename(elt.path));
+    });
+    console.log(pathPictures);
+    res.redirect("/newArticle")
+  });
+});
+
+
+app.listen(PORT, (req, res) => {
+  console.log(`Server started`)
+})

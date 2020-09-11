@@ -192,3 +192,103 @@ margin-left: 1em
 .content {
     line-height: 170%;
 }
+#upload {
+    text-align: center;
+}
+#upload h1 {
+    padding-top: 2em;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+#upload h1+div {
+    width: 40px;
+    border-top: 2px solid black;
+    display: inline-block;
+}
+#my_uploads {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2em;
+padding: 5em
+
+}
+
+@media only screen and (max-width: 320px) {
+    .hero div {
+        width: 100%
+    }
+    .blogs {
+        display: unset;
+    }
+    .blogs img {
+        height: 150px;
+        object-fit: cover;
+    }
+    #all {
+        font-size: 2em;
+    }
+    .hero img {
+        margin: 0;
+        width: 100%
+    }
+    .hero h1{
+        font-size: 1em;
+        width: 100%;
+        padding: 2em 1em
+    }
+    .hero div {
+        border-bottom: 1px solid black;
+        width: 100%;
+        padding-top: 0;
+    }
+    .blogs figcaption {
+        font-family: 'Fira Code', monospace;
+        padding: 1em 5em
+    }
+    nav ul {
+        display: unset;
+    }
+    nav li {
+        padding-left: 0
+    }
+    header {
+        margin: 1em 2em;
+    }
+    header>a {
+        width: 70%
+    }
+    header a img {
+        width: 70%
+    }
+    nav a {
+        letter-spacing: 0.1em;
+        font-size: 0.5em;
+    }
+    footer {
+        overflow: hidden
+    }
+    footer p:first-of-type {
+        width: 230%;
+        word-spacing: 1em;
+        padding-bottom: 2em;
+        padding-top: 1em;
+        font-family: 'Fira Code', monospace;
+        font-size: 0.7em;
+        }
+    footer img {
+width: 80%
+    }
+    footer p:nth-of-type(2) {
+        padding: 2em 3em;
+        font-size: 0.9em;
+    }
+    footer a {
+        font-size: 0.9em
+    }
+    footer p:nth-of-type(3) {
+        padding: 2em;
+        font-size: 0.7em;
+        font-family: 'Fira Code', monospace;
+    }
+
+}

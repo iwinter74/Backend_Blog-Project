@@ -27,7 +27,9 @@
         <p><%=singleBlog.author%></p>
         <span><%=singleBlog.published_at%></span>
         <span>.</span>
-        <span><%=singleBlog.duration%> min read</span>
+        <span>
+            <%= singleBlog.duration !=0 ? `${singleBlog.duration} min read` : 'less than a minute'%>
+        </span>
         </div>
         </div>
 

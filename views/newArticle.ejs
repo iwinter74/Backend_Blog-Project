@@ -3,19 +3,35 @@
 
 <section id="add">
     <article>
-<h1>ADD NEW ARTICLE</h1>
-<div></div>
-</article>
-<form action="/new" method="POST">
-<input placeholder="Title" type="text" name="title" id="">
-<input placeholder="Url Picture" type="text" name="url" id="">
-<input placeholder="Author" type="text" name="author" id="">
-<input placeholder="Author Picture" type="text" name="author_bild" id="">
-<textarea placeholder="Write your article here..." name="body" id="" cols="30" rows="10"></textarea>
-<input type="submit" value="SEND ARTICLE">
-</form>
+        <h1>ADD NEW ARTICLE</h1>
+        <div></div>
+    </article>
+    <form action="/new" method="POST">
+        <input placeholder="Title" type="text" name="title" id="">
+        <input placeholder="Url Picture" type="text" name="url" id="">
+        <input placeholder="Author" type="text" name="author" id="">
+        <input placeholder="Author Picture" type="text" name="author_bild" id="">
+        <textarea placeholder="Write your article here..." name="body" id="" cols="30" rows="10"></textarea>
+        <input type="submit" value="SEND ARTICLE">
+    </form>
+</section>
+<section id="upload">
+    <article>
+        <h1>ADD RELATED IMAGES</h1>
+        <div></div>
+    </article>
+    <form action="/blogs/upload" enctype="multipart/form-data" method="post">
+        <input type="file" name="someExpressFiles" multiple="multiple" />
+        <input type="submit" value="UPLOAD" />
+    </form>
+    <div id="my_uploads">
+        <% pathPictures.forEach(elt => { %>
+        <img src="/<%= elt %> " alt="">
+        <% }) %>
+    </div>
 </section>
 <%- include('./partials/whatNext')%>
 <%- include('./partials/footer')%>
 </body>
+
 </html>
