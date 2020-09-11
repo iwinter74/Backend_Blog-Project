@@ -258,11 +258,11 @@ padding: 5em
         width: 70%
     }
     header a img {
-        width: 70%
+        width: 80%
     }
     nav a {
         letter-spacing: 0.1em;
-        font-size: 0.5em;
+        font-size: 0.7em;
     }
     footer {
         overflow: hidden
