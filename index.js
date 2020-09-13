@@ -235,13 +235,14 @@ app.post('/blogs/upload', (req, res, next) => {
       next(err);
       return;
     }
-    // console.log(path.basename(files.someExpressFiles.path));
-    // pathPictures.push(path.basename(files.someExpressFiles.path));
-    // console.log(pathPictures);
-    files.someExpressFiles.forEach(elt => {
-      pathPictures.push(path.basename(elt.path));
-    });
+    console.log(files.someExpressFiles)
+    console.log(path.basename(files.someExpressFiles.path));
+    pathPictures.push(path.basename(files.someExpressFiles.path));
     console.log(pathPictures);
+    // files.someExpressFiles.forEach(elt => {
+    //   pathPictures.push(path.basename(elt.path));
+    // });
+    // console.log(pathPictures);
     res.redirect("/newArticle")
   });
 });
