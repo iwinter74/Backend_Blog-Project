@@ -184,20 +184,13 @@ app.get('/', function (req, res) {
 app.get('/newArticle', function (req, res) {
   res.status(200).render('newArticle', { title: "new_article", activNav: "/newArticle", randomArr: randomArr, blogList: blogList, pathPictures: pathPictures})
 })
+
 app.get('/blog/:item', (req, res) => {
   console.log(req.params.item)
-  // console.log(blogList[req.params.item].body.split(" ").length)
-  // res.status(200).render('singleBlog', {
-  //   singleBlog: newBlogList[req.params.item - 1], title: `blog_${newBlogList[req.params.item - 1].id}`, randomArr: randomArr, blogList: newBlogList
-  // })
 
   res.status(200).render('singleBlog', {
     singleBlog: blogList[req.params.item], title: `blog_${blogList[req.params.item].id}`, randomArr: randomArr, blogList: blogList
   })
-
-  // res.status(200).render('singleBlog1', {
-  //   singleBlog: newBlogList[req.params.item - 1]
-  // })
 })
 
 
@@ -229,7 +222,7 @@ app.post('/blogs/upload', (req, res, next) => {
     uploadDir: "./uploads",
     keepExtensions: true,
   });
- 
+  
   form.parse(req, (err, fields, files) => {
     if (err) {
       next(err);
