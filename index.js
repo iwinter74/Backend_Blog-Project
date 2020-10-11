@@ -216,29 +216,29 @@ app.post('/new', [
   res.status(201).redirect('/')
 })
 
-app.post('/blogs/upload', (req, res, next) => {
-  const form = formidable({
-    multiples: true,
-    uploadDir: "./uploads",
-    keepExtensions: true,
-  });
+// app.post('/blogs/upload', (req, res, next) => {
+//   const form = formidable({
+//     multiples: true,
+//     uploadDir: "./uploads",
+//     keepExtensions: true,
+//   });
   
-  form.parse(req, (err, fields, files) => {
-    if (err) {
-      next(err);
-      return;
-    }
-    console.log(files.someExpressFiles)
-    console.log(path.basename(files.someExpressFiles.path));
-    pathPictures.push(path.basename(files.someExpressFiles.path));
-    console.log(pathPictures);
-    // files.someExpressFiles.forEach(elt => {
-    //   pathPictures.push(path.basename(elt.path));
-    // });
-    // console.log(pathPictures);
-    res.redirect("/newArticle")
-  });
-});
+//   form.parse(req, (err, fields, files) => {
+//     if (err) {
+//       next(err);
+//       return;
+//     }
+//     console.log(files.someExpressFiles)
+//     console.log(path.basename(files.someExpressFiles.path));
+//     pathPictures.push(path.basename(files.someExpressFiles.path));
+//     console.log(pathPictures);
+//     // files.someExpressFiles.forEach(elt => {
+//     //   pathPictures.push(path.basename(elt.path));
+//     // });
+//     // console.log(pathPictures);
+//     res.redirect("/newArticle")
+//   });
+// });
 
 
 app.listen(PORT, (req, res) => {
